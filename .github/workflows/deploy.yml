@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy
 
 on:
   push:
@@ -17,19 +17,16 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: '14'
-        cache: 'npm'
 
     - name: Install dependencies
       run: npm install
-      working-directory: .
+      working-directory: ./path/to/your/project
 
-    - name: Build the project
+    - name: Build project
       run: npm run build
-      working-directory: .
+      working-directory: ./path/to/your/project
 
     - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist
-    
+        folder: ./path/to/your/project/dist
