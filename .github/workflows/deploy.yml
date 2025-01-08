@@ -20,13 +20,13 @@ jobs:
 
     - name: Install dependencies
       run: npm install
-      working-directory: ./path/to/your/project
+      working-directory: ./game-of-life-walkthrough
 
     - name: Build project
       run: npm run build
-      working-directory: ./path/to/your/project
+      working-directory: ./game-of-life-walkthrough
 
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4
       with:
-        folder: ./path/to/your/project/dist
+        folder: ./game-of-life-walkthrough/dist
